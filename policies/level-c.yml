@@ -1,0 +1,8 @@
+name: "steadybit/definitions/policies/level-c"
+description: "Challenges for host redundancy."
+type: policy
+tasks:
+  - name: "steadybit/definitions/experiments/faultless-redundancy-host"
+    version: 0.1.0
+  - name: "steadybit/definitions/weak-spots/k8s-single-node"
+    version: 0.1.0

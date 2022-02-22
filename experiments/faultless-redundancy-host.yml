@@ -1,0 +1,84 @@
+name: faultless-redundancy-host
+type: experiment
+description: >
+  Kubernetes deployment serves successful HTTP responses when a host is shut down.
+  Use this to verify that deployment's pods are spread across hosts. 
+  It is recommended to check first for the weak spots `k8s-single-node`, `k8s-readiness-probe`.
+  This task requires an exposed HTTP endpoint and at least two pod replicas. 
+  A configurable HTTP call success rate is expected throughout.
+inputs:
+  - name: environmentName
+  - name: teamKey
+  - name: k8sClusterName
+  - name: k8sNamespaceName
+  - name: k8sDeploymentName
+  - name: httpEndpoint
+    type: url
+  - name: successRate
+    type: number
+    defaultValue: 95
+experiment:
+  name: "{{k8sNamespaceName}}/{{k8sDeploymentName}} faultless redundancy during single host outage"
+  hypothesis: "When a single host fails {{successRate}}% of all requests to {{httpEndpoint}} are successful"
+  environment: "{{environmentName}}"
+  team: "{{teamKey}}"
+  lanes:
+    - steps:
+        - type: action
+          parameters:
+            url: "{{httpEndpoint}}"
+            duration: 10s
+            successRate: 100
+          actionType: check:http
+          customLabel: 'GIVEN: All HTTP-Calls are successful'
+        - type: action
+          actionType: check:http
+          customLabel: 'THEN: HTTP invocation has success rate of >= {{successRate}}%'
+          parameters:
+            url: "{{httpEndpoint}}"
+            duration: 60s
+            successRate: "{{successRate}}"
+        - type: action
+          actionType: check:http
+          customLabel: 'THEN: All HTTP-Calls are successful again'
+          parameters:
+            url: "{{httpEndpoint}}"
+            duration: 10s
+            successRate: 100
+    - steps:
+        - type: action
+          actionType: check:kubernetes-pod-count
+          customLabel: 'GIVEN: All pods are available'
+          parameters:
+            duration: 10s
+            cluster: "{{k8sClusterName}}"
+            namespace: "{{k8sNamespaceName}}"
+            deployment: "{{k8sDeploymentName}}"
+            podcount: podCountEqualsDesiredCount
+    - steps:
+        - type: wait
+          parameters:
+            duration: 10s
+        - type: attack
+          attackType: host-shutdown-attack
+          parameters:
+            reboot: 'true'
+            delay: 0m
+          radius:
+            targetType: host
+            maximum: 1
+            query:
+              operator: AND
+              predicates:
+                - key: k8s.cluster-name
+                  operator: EQUALS
+                  values:
+                    - "{{k8sClusterName}}"
+                - key: k8s.namespace
+                  operator: EQUALS
+                  values:
+                    - "{{k8sNamespaceName}}"
+                - key: k8s.deployment
+                  operator: EQUALS
+                  values:
+                    - "{{k8sDeploymentName}}"

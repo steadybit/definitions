@@ -1,0 +1,4 @@
+name: k8s-readiness-probe
+description: "Verifies whether the Kubernetes deployment has readiness probes configured."
+type: weak_spot
+weakSpotId: k8s-readiness-probe

@@ -1,0 +1,88 @@
+name: loose-coupling-to-dependency
+type: experiment
+description: >
+  Kubernetes deployment's pods serve successful HTTP responses when dependent services are unreachable.
+  Use this to verify that deployment's pods have a loose coupling to dependent services during runtime.
+inputs:
+  - name: environmentName
+  - name: teamKey
+  - name: k8sClusterName
+  - name: k8sNamespaceName
+  - name: k8sDeploymentName
+  - name: k8sDependencyClusterName
+  - name: k8sDependencyNamespaceName
+  - name: k8sDependencyDeploymentName
+  - name: httpEndpoint
+    type: url
+  - name: successRate
+    type: number
+    defaultValue: 100
+experiment:
+  name: "{{k8sNamespaceName}}/{{k8sDeploymentName}} loose coupling to {{k8sDependencyNamespaceName}}/{{k8sDependencyDeploymentName}}"
+  hypothesis: "When {{k8sDependencyNamespaceName}}/{{k8sDependencyDeploymentName}} is not reachable from {{k8sDeploymentName}} {{successRate}}% of all requests to {{httpEndpoint}} are successful"
+  environment: "{{environmentName}}"
+  team: "{{teamKey}}"
+  lanes:
+    - steps:
+        - type: action
+          actionType: check:kubernetes-pod-count
+          customLabel: 'GIVEN: All pods are available'
+          parameters:
+            duration: 10s
+            cluster: "{{k8sClusterName}}"
+            namespace: "{{k8sNamespaceName}}"
+            deployment: "{{k8sDeploymentName}}"
+            podcount: podCountEqualsDesiredCount
+        - type: wait
+          parameters:
+            duration: 20s
+        - type: action
+          actionType: check:kubernetes-pod-count
+          parameters:
+            duration: 10s
+            namespace: "{{k8sNamespaceName}}"
+            cluster: "{{k8sClusterName}}"
+            deployment: "{{k8sDeploymentName}}"
+            podcount: podCountEqualsDesiredCount
+        - type: wait
+          parameters:
+            duration: 20s
+        - type: action
+          actionType: check:kubernetes-pod-count
+          parameters:
+            duration: 10s
+            namespace: "{{k8sNamespaceName}}"
+            cluster: "{{k8sClusterName}}"
+            deployment: "{{k8sDeploymentName}}"
+            podcount: podCountEqualsDesiredCount
+    - steps:
+        - type: attack
+          attackType: container-network-blackhole-attack
+          parameters:
+            duration: 1m
+          radius:
+            targetType: container
+            percentage: 100
+            query:
+              operator: AND
+              predicates:
+                - key: k8s.cluster-name
+                  operator: EQUALS
+                  values:
+                    - "{{k8sDependencyClusterName}}"
+                - key: k8s.namespace
+                  operator: EQUALS
+                  values:
+                    - "{{k8sDependencyNamespaceName}}"
+                - key: k8s.deployment
+                  operator: EQUALS
+                  values:
+                    - "{{k8sDependencyDeploymentName}}"
+    - steps:
+        - type: action
+          actionType: check:http
+          customLabel: 'THEN: {{successRate}}% HTTP-Calls are successful'
+          parameters:
+            duration: 1m
+            successRate: "{{successRate}}"
+            url: "{{httpEndpoint}}"

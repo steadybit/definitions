@@ -1,0 +1,78 @@
+name: faultless-redundancy-container
+type: experiment
+description: >
+  Kubernetes deployment HTTP endpoint serves successful HTTP responses while a single container becomes temporarily unreachable.
+  Use this to verify a redundant deployment with readiness checks. 
+  It is recommended to check first for the weak spots `k8s-single-replica`, `k8s-readiness-probe`. 
+  This task requires an exposed HTTP endpoint and at least two pod replicas. 
+  A configurable HTTP call success rate is expected throughout.
+inputs:
+  - name: environmentName
+  - name: teamKey
+  - name: k8sClusterName
+  - name: k8sNamespaceName
+  - name: k8sDeploymentName
+  - name: containerName
+  - name: httpEndpoint
+    type: url
+  - name: successRate
+    type: number
+    defaultValue: 95
+experiment:
+  name: "{{k8sNamespaceName}}/{{k8sDeploymentName}} faultless redundancy during single pod failure"
+  hypothesis: "When a single pod fails {{successRate}}% of all requests to {{httpEndpoint}} are successful"
+  environment: "{{environmentName}}"
+  team: "{{teamKey}}"
+  lanes:
+    - steps:
+        - type: action
+          actionType: check:http
+          customLabel: 'GIVEN: All HTTP-Calls are successful'
+          parameters:
+            duration: 10s
+            successRate: 100
+            url: "{{httpEndpoint}}"
+        - type: action
+          actionType: check:http
+          customLabel: 'THEN: HTTP invocation has success rate of >= {{successRate}}%'
+          parameters:
+            duration: 30s
+            successRate: "{{successRate}}"
+            url: "{{httpEndpoint}}"
+        - type: action
+          actionType: check:http
+          customLabel: 'THEN: All HTTP-Calls are successful again'
+          parameters:
+            successRate: 100
+            requestsPerSecond: 1
+            url: "{{httpEndpoint}}"
+    - steps:
+        - type: wait
+          parameters:
+            duration: 10s
+        - type: attack
+          attackType: container-network-blackhole-attack
+          parameters:
+            duration: 30s
+          radius:
+            targetType: container
+            maximum: 1
+            query:
+              operator: AND
+              predicates:
+                - key: k8s.cluster-name
+                  operator: EQUALS
+                  values:
+                    - "{{k8sClusterName}}"
+                - key: k8s.namespace
+                  operator: EQUALS
+                  values:
+                    - "{{k8sNamespaceName}}"
+                - key: k8s.deployment
+                  operator: EQUALS
+                  values:
+                    - "{{k8sDeploymentName}}"
+                - key: k8s.container.name
+                  operator: EQUALS
+                  values:
+                    - "{{containerName}}"

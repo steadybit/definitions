@@ -1,0 +1,195 @@
+= Steadybit Resilience Policies and Task Definitions
+
+This repository contains all pre-defined resilience policies and tasks.
+
+== Experiment Tasks
+
+=== recovery-of-single-container
+The Kubernetes deployment recovers when a container is killed.
+Use this to verify that restarts are possible. +
+The affected pod should be replaced within a given time – ending with the Kubernetes deployment back in the ready state.
+
+.*Parameters*
+[%collapsible]
+=====
+|====
+| environmentName     | The environment which is used for the experiment
+| teamKey             | The team which is used for the experiment
+| k8sClusterName      | The Kubernetes cluster of the container
+| k8sNamespaceName    | The Kubernetes namespace of the container
+| k8sDeploymentName   | The Kubernetes deployment of the container
+| containerName       | The name of the container to kill
+| maximumRecoveryTime | The maximum allowed recovery time (default: 2m)
+|====
+=====
+
+.*Example*
+[%collapsible]
+=====
+TODO
+=====
+
+=== recovery-of-single-host
+Kubernetes deployment recovers when a host is shut down.
+Use this to verify that deployments are host independent. +
+The affected deployments' pods should be replaced within ten minutes – ending with the Kubernetes deployment back in the ready state.
+
+.*Parameters*
+[%collapsible]
+=====
+|====
+| environmentName     | The environment which is used for the experiment
+| teamKey             | The team which is used for the experiment
+| k8sClusterName      | The Kubernetes cluster of the deployment
+| k8sNamespaceName    | The Kubernetes namespace of the deployment
+| k8sDeploymentName   | The Kubernetes Deployment, of which hosts a single one is rebooted.
+| maximumRecoveryTime | The maximum allowed recovery time (default: 10m)
+|====
+=====
+
+.*Example*
+[%collapsible]
+=====
+TODO
+=====
+
+=== faultless-redundancy-container
+Kubernetes deployment HTTP endpoint serves successful HTTP responses while a single container becomes temporarily unreachable.
+Use this to verify a redundant deployment with readiness checks. +
+It is recommended to check first for the weak spots `k8s-single-replica`, `k8s-readiness-probe`.
+This task requires an exposed HTTP endpoint and at least two pod replicas.
+A configurable HTTP call success rate is expected throughout.
+
+.*Parameters*
+[%collapsible]
+=====
+|====
+| environmentName     | The environment which is used for the experiment
+| teamKey             | The team which is used for the experiment
+| k8sClusterName      | The Kubernetes cluster of the container
+| k8sNamespaceName    | The Kubernetes namespace of the container
+| k8sDeploymentName   | The Kubernetes deployment of the container
+| containerName       | The name of the container to kill
+| httpEndpoint        | The HTTP endpoint to perform GET requests on
+| successRate         | The minimum required success rate. (default: 95)
+|====
+=====
+
+.*Example*
+[%collapsible]
+=====
+TODO
+=====
+
+=== faultless-redundancy-rolling-update
+Kubernetes deployment serves successful HTTP responses while performing an update.
+Use this to verify a rolling update strategy is implemented and functional. +
+It is recommended to check first for the weak spots `k8s-deployment-strategy`.
+This task requires an exposed HTTP endpoint and at least two pod replicas. A configurable HTTP call success rate is expected throughout.
+
+.*Parameters*
+[%collapsible]
+=====
+|====
+| environmentName     | The environment which is used for the experiment
+| teamKey             | The team which is used for the experiment
+| k8sClusterName      | The Kubernetes cluster of the deployment
+| k8sNamespaceName    | The Kubernetes namespace of the deployment
+| k8sDeploymentName   | The Kubernetes deployment to roll over.
+| httpEndpoint        | The HTTP endpoint to perform GET requests on
+| successRate         | The minimum required success rate. (default: 95)
+|====
+=====
+
+.*Example*
+[%collapsible]
+=====
+TODO
+=====
+
+=== faultless-redundancy-host
+Kubernetes deployment serves successful HTTP responses when a host is shut down.
+Use this to verify that deployment's pods are spread across hosts.
+It is recommended to check first for the weak spots `k8s-single-node`, `k8s-readiness-probe`. This task requires an exposed HTTP endpoint and at least two pod replicas. A configurable HTTP call success rate is expected throughout.
+
+.*Parameters*
+[%collapsible]
+=====
+|====
+| environmentName     | The environment which is used for the experiment
+| teamKey             | The team which is used for the experiment
+| k8sClusterName      | The Kubernetes cluster of the deployment
+| k8sNamespaceName    | The Kubernetes namespace of the deployment
+| k8sDeploymentName   | The Kubernetes deployment, of which hosts a single one is rebooted.
+| httpEndpoint        | The HTTP endpoint to perform GET requests on
+| successRate         | The minimum required success rate. (default: 95)
+|====
+=====
+
+.*Example*
+[%collapsible]
+=====
+TODO
+=====
+
+=== loose-coupling-to-dependency
+Kubernetes deployment's pods serve successful HTTP responses when dependent services are unreachable.
+Use this to verify that deployment's pods have a loose coupling to dependent services during runtime.
+
+.*Parameters*
+[%collapsible]
+=====
+|====
+| environmentName             | The environment which is used for the experiment
+| teamKey                     | The team which is used for the experiment
+| k8sClusterName              | The Kubernetes cluster
+| k8sNamespaceName            | The Kubernetes namespace
+| k8sDeploymentName           | The Kubernetes deployment to watch the pod count for
+| k8sDependencyClusterName    | The Kubernetes cluster to use
+| k8sDependencyNamespaceName  | The Kubernetes namespace to use
+| k8sDependencyDeploymentName | The Kubernetes deployment to make unreachable
+| httpEndpoint                | The HTTP endpoint to perform GET requests on
+| successRate                 | The minimum required success rate. (default: 100)
+|====
+=====
+
+.*Example*
+[%collapsible]
+=====
+TODO
+=====
+
+=== loose-coupling-to-dependency-during-startup
+Kubernetes deployment's pods can become ready when dependent services are unreachable.
+Use this verify that deployment's pods have a loose coupling to dependent services during startup.
+
+.*Parameters*
+[%collapsible]
+=====
+|====
+| environmentName             | The environment which is used for the experiment
+| teamKey                     | The team which is used for the experiment
+| k8sClusterName              | The Kubernetes cluster
+| k8sNamespaceName            | The Kubernetes namespace
+| k8sDeploymentName           | The Kubernetes deployment to watch the pod count for
+| k8sDependencyClusterName    | The Kubernetes cluster to use
+| k8sDependencyNamespaceName  | The Kubernetes namespace to use
+| k8sDependencyDeploymentName | The Kubernetes deployment to make unreachable
+|====
+=====
+
+.*Example*
+[%collapsible]
+=====
+TODO
+=====
+
+== Weak Spot Tasks
+
+|====
+|*Name* |*Description*
+|*k8s-deployment-strategy* |Verifies whether the Kubernetes deployment has a rolling update deployment strategy configured.
+|*k8s-readiness-probe*     |Verifies whether the Kubernetes deployment has readiness probes configured.
+|*k8s-single-node*         |Verifies whether the Kubernetes deployment is spread across two or more nodes.
+|*k8s-single-replica*      |Verifies whether the Kubernetes deployment has multiple replicas.
+|====

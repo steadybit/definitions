@@ -1,0 +1,4 @@
+name: k8s-deployment-strategy
+description: "Verifies whether the Kubernetes deployment has a rolling update deployment strategy configured."
+type: weak_spot
+weakSpotId: k8s-deployment-strategy

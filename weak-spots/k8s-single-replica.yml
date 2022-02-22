@@ -1,0 +1,4 @@
+name: k8s-single-replica
+description: "Verifies whether the Kubernetes deployment has multiple replicas."
+type: weak_spot
+weakSpotId: k8s-single_replica
