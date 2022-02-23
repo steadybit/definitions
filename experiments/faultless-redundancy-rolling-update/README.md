@@ -9,7 +9,7 @@ endpoint and at least two pod replicas. A configurable HTTP call success rate is
 ```yaml
 name: demo-gateway
 tasks:
-  - name: "steadybit/definitions/tasks/faultless-redundancy-rolling-update"
+  - name: "steadybit/definitions/experiments/faultless-redundancy-rolling-update"
     version: 0.1.2
     parameters:
       teamKey: "BS"

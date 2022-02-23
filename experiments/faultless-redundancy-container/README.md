@@ -11,7 +11,7 @@ A configurable HTTP call success rate is expected throughout.
 ```yaml
 name: demo-gateway
 tasks:
-  - name: "steadybit/definitions/tasks/faultless-redundancy-container"
+  - name: "steadybit/definitions/experiments/faultless-redundancy-container"
     version: 0.1.2
     forEach:
       iterables: [ container ]

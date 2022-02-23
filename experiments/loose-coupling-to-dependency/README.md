@@ -13,15 +13,15 @@ parameters:
   k8sDependencyClusterName: "demo-dev"
   k8sDependencyNamespaceName: "steadybit-demo"
 tasks:
-  - name: "steadybit/definitions/tasks/faultless-redundancy-rolling-update"
+  - name: "steadybit/definitions/experiments/faultless-redundancy-rolling-update"
     version: 0.1.2
     parameters:
       k8sDependencyDeploymentName: "fashion-bestseller"
-  - name: "steadybit/definitions/tasks/faultless-redundancy-rolling-update"
+  - name: "steadybit/definitions/experiments/faultless-redundancy-rolling-update"
     version: 0.1.2
     parameters:
       k8sDependencyDeploymentName: "toys-bestseller"
-  - name: "steadybit/definitions/tasks/faultless-redundancy-rolling-update"
+  - name: "steadybit/definitions/experiments/faultless-redundancy-rolling-update"
     version: 0.1.2
     parameters:
       k8sDependencyDeploymentName: "hot-deals"

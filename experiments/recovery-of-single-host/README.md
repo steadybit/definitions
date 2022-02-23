@@ -9,7 +9,7 @@ The affected deployments' pods should be replaced within ten minutes – ending 
 ```yaml
 name: demo-gateway
 tasks:
-  - name: 'steadybit/definitions/tasks/recovery-of-single-host'
+  - name: 'steadybit/definitions/experiments/recovery-of-single-host'
     version: 0.1.2
     parameters:
       teamKey: 'BS'
