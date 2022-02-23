@@ -13,12 +13,10 @@ tasks:
     forEach:
       iterables: [ container ]
       define:
-        parameters:
-          containerName: "{{container.name}}"
+        containerName: "{{container.name}}"
   - name: "steadybit/definitions/weak-spots/k8s-single-replica"
     version: 0.1.0
     forEach:
       iterables: [ container ]
       define:
-        parameters:
-          containerName: "{{container.name}}"
+        containerName: "{{container.name}}"

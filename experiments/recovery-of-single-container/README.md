@@ -14,11 +14,10 @@ tasks:
     forEach:
       iterables: [ container ]
       define:
-        parameters:
-          teamKey: "BS"
-          environmentName: "Online Shop DEV"
-          httpEndpoint: "https://k8s-dev.demo.steadybit.io/products"
-          containerName: "{{container.name}}"
+        teamKey: "BS"
+        environmentName: "Online Shop DEV"
+        httpEndpoint: "https://k8s-dev.demo.steadybit.io/products"
+        containerName: "{{container.name}}"
 mapping:
   kubernetes:
     cluster: demo-dev

@@ -13,8 +13,7 @@ tasks:
     forEach:
       iterables: [ container ]
       define:
-        parameters:
-          containerName: "{{ container.name }}"
+        containerName: "{{ container.name }}"
 
 mapping:
   kubernetes:
