@@ -10,7 +10,7 @@ The affected deployments' pods should be replaced within ten minutes – ending 
 name: demo-gateway
 tasks:
   - name: 'steadybit/definitions/experiments/recovery-of-single-host'
-    version: 0.1.2
+    version: 0.1.4
     parameters:
       teamKey: 'BS'
       environmentName: 'Online Shop PROD'
