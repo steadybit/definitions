@@ -1,4 +1,4 @@
-name: k8s-readiness-probe
+name: steadybit/definitions/weak-spots/k8s-readiness-probe
 description: "Verifies whether the Kubernetes deployment has readiness probes configured."
 type: weak_spot
 weakSpotImpl:  k8s-readiness-probe

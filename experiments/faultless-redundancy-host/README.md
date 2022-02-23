@@ -10,7 +10,7 @@ It is recommended to check first for the weak spots `k8s-single-node`, `k8s-read
 name: demo-gateway
 tasks:
   - name: "steadybit/definitions/experiments/faultless-redundancy-host"
-    version: 0.1.4
+    version: 0.1.5
     parameters:
       teamKey: "BS"
       environmentName: "Online Shop DEV"

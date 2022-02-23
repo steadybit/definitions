@@ -3,19 +3,19 @@ description: "Challenges for redundancy."
 type: policy
 tasks:
   - name: "steadybit/definitions/experiments/faultless-redundancy-container"
-    version: 0.1.4
+    version: 0.1.5
     forEach:
       iterables: [ container ]
       define:
         containerName: "{{container.name}}"
   - name: "steadybit/definitions/weak-spots/k8s-readiness-probe"
-    version: 0.1.4
+    version: 0.1.5
     forEach:
       iterables: [ container ]
       define:
         containerName: "{{container.name}}"
   - name: "steadybit/definitions/weak-spots/k8s-single-replica"
-    version: 0.1.4
+    version: 0.1.5
     forEach:
       iterables: [ container ]
       define:

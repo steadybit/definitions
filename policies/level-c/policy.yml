@@ -3,9 +3,9 @@ description: "Challenges for host redundancy."
 type: policy
 tasks:
   - name: "steadybit/definitions/experiments/faultless-redundancy-host"
-    version: 0.1.4
+    version: 0.1.5
   - name: "steadybit/definitions/weak-spots/k8s-single-node"
-    version: 0.1.4
+    version: 0.1.5
     forEach:
       iterables: [ container ]
       define:
