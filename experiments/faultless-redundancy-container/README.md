@@ -12,7 +12,7 @@ A configurable HTTP call success rate is expected throughout.
 name: demo-gateway
 tasks:
   - name: "steadybit/definitions/tasks/faultless-redundancy-container"
-    version: 0.1.0
+    version: 0.1.2
     forEach:
       iterables: [ container ]
       define:

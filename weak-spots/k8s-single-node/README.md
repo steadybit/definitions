@@ -9,7 +9,7 @@ name: demo-gateway
 
 tasks:
   - name: "steadybit/definitions/weak-spots/k8s-single-node"
-    version: 0.1.0
+    version: 0.1.2
     forEach:
       iterables: [ container ]
       define:

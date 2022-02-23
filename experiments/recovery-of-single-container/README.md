@@ -10,7 +10,7 @@ The affected pod should be replaced within a given time – ending with the Kube
 name: demo-gateway
 tasks:
   - name: "steadybit/definitions/tasks/recovery-of-single-container"
-    version: 0.1.0
+    version: 0.1.2
     forEach:
       iterables: [ container ]
       define:

@@ -3,9 +3,9 @@ description: "Challenges for redundancy during updates."
 type: policy
 tasks:
   - name: "steadybit/definitions/experiments/faultless-redundancy-rolling-update"
-    version: 0.1.0
+    version: 0.1.2
   - name: "steadybit/definitions/weak-spots/k8s-deployment-strategy"
-    version: 0.1.0
+    version: 0.1.2
     forEach:
       iterables: [ container ]
       define:
