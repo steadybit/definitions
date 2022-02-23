@@ -1,4 +1,4 @@
-name: faultless-redundancy-host
+name: "steadybit/definitions/experiments/faultless-redundancy-host"
 type: experiment
 description: >
   Kubernetes deployment serves successful HTTP responses when a host is shut down.

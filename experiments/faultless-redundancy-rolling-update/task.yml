@@ -1,4 +1,4 @@
-name: faultless-redundancy-rolling-update
+name: "steadybit/definitions/experiments/faultless-redundancy-rolling-update"
 type: experiment
 description: >
   Kubernetes deployment serves successful HTTP responses while performing an update. 

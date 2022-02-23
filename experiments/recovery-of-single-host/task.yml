@@ -1,4 +1,4 @@
-name: recovery-of-single-host
+name: "steadybit/definitions/experiments/recovery-of-single-host"
 type: experiment
 description: >
   Kubernetes deployment recovers when a host is shut down. 

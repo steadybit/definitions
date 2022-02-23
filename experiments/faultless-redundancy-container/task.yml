@@ -1,4 +1,4 @@
-name: faultless-redundancy-container
+name: "steadybit/definitions/experiments/faultless-redundancy-container"
 type: experiment
 description: >
   Kubernetes deployment HTTP endpoint serves successful HTTP responses while a single container becomes temporarily unreachable.

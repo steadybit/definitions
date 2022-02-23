@@ -1,4 +1,4 @@
-name: loose-coupling-to-dependency
+name: "steadybit/definitions/experiments/loose-coupling-to-dependency"
 type: experiment
 description: >
   Kubernetes deployment's pods serve successful HTTP responses when dependent services are unreachable.

@@ -1,4 +1,4 @@
-name: recovery-of-single-container
+name: "steadybit/definitions/experiments/recovery-of-single-container"
 type: experiment
 description: >
   Kubernetes deployment recovers when a container is killed.

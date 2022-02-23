@@ -1,4 +1,4 @@
-name: loose-coupling-to-dependency-during-startup
+name: "steadybit/definitions/experiments/loose-coupling-to-dependency-during-startup"
 type: experiment
 description: > 
   Kubernetes deployment's pods can become ready when dependent services are unreachable.
