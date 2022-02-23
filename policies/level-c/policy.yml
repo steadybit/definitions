@@ -6,3 +6,8 @@ tasks:
     version: 0.1.0
   - name: "steadybit/definitions/weak-spots/k8s-single-node"
     version: 0.1.0
+    forEach:
+      iterables: [ container ]
+      define:
+        parameters:
+          containerName: "{{container.name}}"

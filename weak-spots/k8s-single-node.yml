@@ -1,4 +1,0 @@
-name: k8s-single-node
-description: "Verifies whether the Kubernetes deployment is spread across two or more nodes."
-type: weak_spot
-weakSpotId: k8s-single-node
