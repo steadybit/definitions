@@ -18,8 +18,8 @@ This repository contains all pre-defined resilience policies and tasks to be use
 - [k8s-single-node](./weak-spots/k8s-single-node/README.md)
 
 ## Policies
-- [level-a](./policies/level-a/README.md)
-- [level-b](./policies/level-b/README.md)
+- [kubernetes-loose-coupling](./policies/kubernetes-loose-coupling/README.md)
+- [kubernetes-loose-coupling-on-startup](./policies/kubernetes-loose-coupling-on-startup/README.md)
 - [level-c](./policies/level-c/README.md)
 - [level-d](./policies/level-d/README.md)
 - [level-e](./policies/level-e/README.md)

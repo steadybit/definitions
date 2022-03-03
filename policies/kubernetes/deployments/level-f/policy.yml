@@ -1,0 +1,13 @@
+name: steadybit/definitions/policies/level-f
+description: Challenges for recovery.
+type: policy
+tasks:
+  - name: steadybit/definitions/experiments/recovery-of-single-container
+    version: 0.1.5
+    forEach:
+      iterables:
+        - container
+      define:
+        containerName: '{{container.name}}'
+  - name: steadybit/definitions/experiments/recovery-of-single-host
+    version: 0.1.5

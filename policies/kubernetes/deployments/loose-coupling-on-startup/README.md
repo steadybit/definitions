@@ -1,4 +1,4 @@
-# level-b
+# kubernetes/deployments/loose-coupling-on-startup
 
 Challenges for loose coupling on startup.
 
@@ -12,7 +12,7 @@ Challenges for loose coupling on startup.
 id: ca086ce3-15af-4b5a-9fda-456d03ad82c0
 name: demo-gateway
 policies:
-  - name: 'steadybit/definitions/policies/level-b'
+  - name: 'steadybit/definitions/policies/kubernetes/deployments/loose-coupling-on-startup'
     version: 0.1.5
     parameters:
       teamKey: 'BS'

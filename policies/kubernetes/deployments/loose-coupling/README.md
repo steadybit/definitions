@@ -1,4 +1,4 @@
-# level-a
+# kubernetes/deployments/loose-coupling
 
 Challenges for loose coupling.
 
@@ -12,7 +12,7 @@ Challenges for loose coupling.
 id: ca086ce3-15af-4b5a-9fda-456d03ad82c0
 name: demo-gateway
 policies:
-  - name: 'steadybit/definitions/policies/level-a'
+  - name: 'steadybit/definitions/policies/kubernetes/deployments/loose-coupling'
     version: 0.1.5
     parameters:
       teamKey: 'BS'
