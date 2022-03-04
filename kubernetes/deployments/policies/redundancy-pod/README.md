@@ -1,4 +1,4 @@
-# level-e
+# kubernetes/deployments/redundancy-pod
 
 Challenges for pod redundancy.
 

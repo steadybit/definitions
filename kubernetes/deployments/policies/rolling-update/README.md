@@ -1,4 +1,4 @@
-# level-d
+# kubernetes/deployments/rolling-update
 
 Challenges for redundancy during updates.
 
