@@ -61,6 +61,7 @@ experiment:
             duration: 10s
         - type: attack
           attackType: host-shutdown-attack
+          customLabel: 'WHEN: A host is rebooted'
           parameters:
             reboot: 'true'
             delay: 0m

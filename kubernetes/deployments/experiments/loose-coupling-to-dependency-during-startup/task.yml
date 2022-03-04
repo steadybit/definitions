@@ -29,6 +29,7 @@ experiment:
             deployment: "{{k8sDeploymentName}}"
             podcount: podCountEqualsDesiredCount
         - type: attack
+          customLabel: 'WHEN: 100% of the {{k8sDependencyDeploymentName}} are blackholed'
           parameters:
             duration: 3m
           attackType: container-network-blackhole-attack

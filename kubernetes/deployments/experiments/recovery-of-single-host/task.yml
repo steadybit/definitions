@@ -29,6 +29,7 @@ experiment:
             deployment: "{{k8sDeploymentName}}"
             podcount: podCountEqualsDesiredCount
         - type: attack
+          customLabel: 'WHEN: A host is rebooted'
           parameters:
             reboot: 'true'
             delay: 0m
