@@ -52,7 +52,7 @@ experiment:
             duration: 10s
         - type: attack
           attackType: container-network-blackhole-attack
-          customLabel: 'WHEN: Single container {{containerName}} is stopped'
+          customLabel: "WHEN: Single container {{containerName}} is stopped"
           parameters:
             duration: 30s
           radius:

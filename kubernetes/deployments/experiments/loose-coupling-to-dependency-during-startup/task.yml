@@ -1,6 +1,6 @@
 name: "steadybit/definitions/kubernetes/deployments/experiments/loose-coupling-to-dependency-during-startup"
 type: experiment
-description: > 
+description: >
   Kubernetes deployment's pods can become ready when dependent services are unreachable.
   Use this verify that deployment's pods have a loose coupling to dependent services during startup.
 inputs:
@@ -29,7 +29,7 @@ experiment:
             deployment: "{{k8sDeploymentName}}"
             podcount: podCountEqualsDesiredCount
         - type: attack
-          customLabel: 'WHEN: 100% of the {{k8sDependencyDeploymentName}} are blackholed'
+          customLabel: "WHEN: 100% of the {{k8sDependencyDeploymentName}} are blackholed"
           parameters:
             duration: 3m
           attackType: container-network-blackhole-attack
