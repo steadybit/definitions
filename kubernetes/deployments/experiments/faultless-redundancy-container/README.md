@@ -1,10 +1,8 @@
 # faultless-redundancy-container
 
-Kubernetes deployment HTTP endpoint serves successful HTTP responses while a single container becomes temporarily unreachable.
-Use this to verify a redundant deployment with readiness checks.
-It is recommended to check first for the weak spots `k8s-single-replica`, `k8s-readiness-probe`.
-This task requires an exposed HTTP endpoint and at least two pod replicas.
-A configurable HTTP call success rate is expected throughout.
+Kubernetes deployment HTTP endpoint serves successful HTTP responses while a single container becomes temporarily unreachable. Use this to verify a redundant
+deployment with readiness checks. It is recommended to check first for the weak spots `k8s-single-replica`, `k8s-readiness-probe`. This task requires an exposed
+HTTP endpoint and at least two pod replicas. A configurable HTTP call success rate is expected throughout.
 
 ## Example Service Definition
 
@@ -12,7 +10,7 @@ A configurable HTTP call success rate is expected throughout.
 name: demo-gateway
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-container"
-    version: 0.2.0
+    version: 0.2.2
     forEach:
       iterables: [ container ]
       define:

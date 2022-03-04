@@ -1,8 +1,7 @@
 # recovery-of-single-container
 
-The Kubernetes deployment recovers when a container is killed.
-Use this to verify that restarts are possible.
-The affected pod should be replaced within a given time – ending with the Kubernetes deployment back in the ready state.
+The Kubernetes deployment recovers when a container is killed. Use this to verify that restarts are possible. The affected pod should be replaced within a given
+time – ending with the Kubernetes deployment back in the ready state.
 
 ## Example Service Definition
 
@@ -10,7 +9,7 @@ The affected pod should be replaced within a given time – ending with the Kube
 name: demo-gateway
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/recovery-of-single-container"
-    version: 0.2.0
+    version: 0.2.2
     forEach:
       iterables: [ container ]
       define:

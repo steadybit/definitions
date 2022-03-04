@@ -1,7 +1,7 @@
 # loose-coupling-to-dependency-during-startup
 
-Kubernetes deployment's pods can become ready when dependent services are unreachable.
-Use this verify that deployment's pods have a loose coupling to dependent services during startup.
+Kubernetes deployment's pods can become ready when dependent services are unreachable. Use this verify that deployment's pods have a loose coupling to dependent
+services during startup.
 
 ## Example Service Definition
 
@@ -14,15 +14,15 @@ parameters:
   k8sDependencyNamespaceName: "steadybit-demo"
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.2.0
+    version: 0.2.2
     parameters:
       k8sDependencyDeploymentName: "fashion-bestseller"
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.2.0
+    version: 0.2.2
     parameters:
       k8sDependencyDeploymentName: "toys-bestseller"
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.2.0
+    version: 0.2.2
     parameters:
       k8sDependencyDeploymentName: "hot-deals"
 mapping:

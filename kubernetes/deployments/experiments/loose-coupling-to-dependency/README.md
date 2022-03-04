@@ -1,9 +1,10 @@
 # loose-coupling-to-dependency
 
-Kubernetes deployment's pods serve successful HTTP responses when dependent services are unreachable.
-Use this to verify that deployment's pods have a loose coupling to dependent services during runtime.
+Kubernetes deployment's pods serve successful HTTP responses when dependent services are unreachable. Use this to verify that deployment's pods have a loose
+coupling to dependent services during runtime.
 
 ## Example Service Definition
+
 ```yaml
 name: demo-gateway
 parameters:
@@ -14,15 +15,15 @@ parameters:
   k8sDependencyNamespaceName: "steadybit-demo"
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.2.0
+    version: 0.2.2
     parameters:
       k8sDependencyDeploymentName: "fashion-bestseller"
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.2.0
+    version: 0.2.2
     parameters:
       k8sDependencyDeploymentName: "toys-bestseller"
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.2.0
+    version: 0.2.2
     parameters:
       k8sDependencyDeploymentName: "hot-deals"
 mapping:

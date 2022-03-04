@@ -1,8 +1,7 @@
 # recovery-of-single-host
 
-Kubernetes deployment recovers when a host is shut down.
-Use this to verify that deployments are host independent.
-The affected deployments' pods should be replaced within ten minutes – ending with the Kubernetes deployment back in the ready state.
+Kubernetes deployment recovers when a host is shut down. Use this to verify that deployments are host independent. The affected deployments' pods should be
+replaced within ten minutes – ending with the Kubernetes deployment back in the ready state.
 
 ## Example Service Definition
 
@@ -10,7 +9,7 @@ The affected deployments' pods should be replaced within ten minutes – ending 
 name: demo-gateway
 tasks:
   - name: 'steadybit/definitions/kubernetes/deployments/experiments/recovery-of-single-host'
-    version: 0.2.0
+    version: 0.2.2
     parameters:
       teamKey: 'BS'
       environmentName: 'Online Shop PROD'

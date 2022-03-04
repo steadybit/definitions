@@ -3,9 +3,9 @@ description: Challenges for host redundancy.
 type: policy
 tasks:
   - name: steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-host
-    version: 0.2.0
+    version: 0.2.2
   - name: steadybit/definitions/kubernetes/deployments/weak-spots/single-node
-    version: 0.2.0
+    version: 0.2.2
     forEach:
       iterables:
         - container
