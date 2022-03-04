@@ -1,0 +1,13 @@
+name: steadybit/definitions/kubernetes/deployments/policies/loose-coupling
+description: Challenges for loose coupling.
+type: policy
+tasks:
+  - name: steadybit/definitions/kubernetes/deployments/experiments/loose-coupling-to-dependency
+    version: 0.2.0
+    forEach:
+      iterables:
+        - dependency
+      define:
+        k8sDependencyClusterName: '{{dependency.mapping.kubernetes.cluster}}'
+        k8sDependencyNamespaceName: '{{dependency.mapping.kubernetes.namespace}}'
+        k8sDependencyDeploymentName: '{{dependency.mapping.kubernetes.deployment}}'

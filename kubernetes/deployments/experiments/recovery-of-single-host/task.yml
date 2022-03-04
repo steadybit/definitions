@@ -1,0 +1,71 @@
+name: "steadybit/definitions/kubernetes/deployments/experiments/recovery-of-single-host"
+type: experiment
+description: >
+  Kubernetes deployment recovers when a host is shut down. 
+  Use this to verify that deployments are host independent. 
+  The affected deployments' pods should be replaced within ten minutes – ending with the Kubernetes deployment back in the ready state.
+inputs:
+  - name: environmentName
+  - name: teamKey
+  - name: k8sClusterName
+  - name: k8sNamespaceName
+  - name: k8sDeploymentName
+  - name: maximumRecoveryTime
+    defaultValue: "10m"
+experiment:
+  name: "{{k8sNamespaceName}}/{{k8sDeploymentName}} single host failure"
+  hypothesis: "When a single host running {{k8sNamespaceName}}/{{k8sDeploymentName}} fails then within {{maximumRecoveryTime}} all pods are ready."
+  environment: "{{environmentName}}"
+  team: "{{teamKey}}"
+  lanes:
+    - steps:
+        - type: action
+          actionType: check:kubernetes-pod-count
+          customLabel: 'GIVEN: All pods are ready'
+          parameters:
+            duration: 10s
+            cluster: "{{k8sClusterName}}"
+            namespace: "{{k8sNamespaceName}}"
+            deployment: "{{k8sDeploymentName}}"
+            podcount: podCountEqualsDesiredCount
+        - type: attack
+          parameters:
+            reboot: 'true'
+            delay: 0m
+          attackType: host-shutdown-attack
+          radius:
+            targetType: host
+            maximum: 1
+            query:
+              operator: AND
+              predicates:
+                - key: k8s.cluster-name
+                  operator: EQUALS
+                  values:
+                    - "{{k8sClusterName}}"
+                - key: k8s.namespace
+                  operator: EQUALS
+                  values:
+                    - "{{k8sNamespaceName}}"
+                - key: k8s.deployment
+                  operator: EQUALS
+                  values:
+                    - "{{k8sDeploymentName}}"
+        - type: action
+          actionType: check:kubernetes-pod-count
+          customLabel: 'THEN: Ready Pod Count decreases'
+          parameters:
+            duration: 5m
+            cluster: "{{k8sClusterName}}"
+            namespace: "{{k8sNamespaceName}}"
+            deployment: "{{k8sDeploymentName}}"
+            podcount: podCountLessThanDesiredCount
+        - type: action
+          actionType: check:kubernetes-pod-count
+          customLabel: 'THEN: Pod count is all back again'
+          parameters:
+            duration: "{{maximumRecoveryTime}}"
+            cluster: "{{k8sClusterName}}"
+            namespace: "{{k8sNamespaceName}}"
+            deployment: "{{k8sDeploymentName}}"
+            podcount: podCountEqualsDesiredCount
