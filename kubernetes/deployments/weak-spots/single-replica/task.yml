@@ -1,0 +1,9 @@
+name: steadybit/definitions/kubernetes/deployments/weak-spots/single-replica
+description: "Verifies whether the Kubernetes deployment has multiple replicas."
+type: weak_spot
+weakSpotImpl:  k8s-single_replica
+inputs:
+  - name: k8sClusterName
+  - name: k8sNamespaceName
+  - name: k8sDeploymentName
+  - name: containerName

@@ -1,0 +1,70 @@
+name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
+type: experiment
+description: >
+  Kubernetes deployment serves successful HTTP responses while performing an update. 
+  Use this to verify a rolling update strategy is implemented and functional.
+  It is recommended to check first for the weak spots `k8s-deployment-strategy`.
+  This task requires an exposed HTTP endpoint and at least two pod replicas. 
+  A configurable HTTP call success rate is expected throughout.
+inputs:
+  - name: environmentName
+  - name: teamKey
+  - name: k8sClusterName
+  - name: k8sNamespaceName
+  - name: k8sDeploymentName
+  - name: httpEndpoint
+    type: url
+  - name: successRate
+    type: number
+    defaultValue: 95
+experiment:
+  name: "{{k8sNamespaceName}}/{{k8sDeploymentName}} faultless redundancy during rolling update"
+  hypothesis: "When a deployment is rescheduled {{successRate}}% of all requests to {{httpEndpoint}} are successful"
+  environment: "{{environmentName}}"
+  team: "{{teamKey}}"
+  lanes:
+    - steps:
+        - type: action
+          actionType: check:http
+          customLabel: 'GIVEN: All HTTP-Calls are successful'
+          parameters:
+            duration: 10s
+            successRate: 100
+            url: "{{httpEndpoint}}"
+        - type: action
+          actionType: check:http
+          customLabel: 'THEN: HTTP invocation has success rate of >= {{successRate}}%'
+          parameters:
+            duration: 60s
+            successRate: "{{successRate}}"
+            url: "{{httpEndpoint}}"
+        - type: action
+          actionType: check:http
+          customLabel: 'THEN: All HTTP-Calls are successful again'
+          parameters:
+            duration: 10s
+            successRate: 100
+            url: "{{httpEndpoint}}"
+    - steps:
+        - type: action
+          actionType: check:kubernetes-pod-count
+          customLabel: 'GIVEN: All pods are available'
+          parameters:
+            duration: 10s
+            cluster: "{{k8sClusterName}}"
+            namespace: "{{k8sNamespaceName}}"
+            deployment: "{{k8sDeploymentName}}"
+            podcount: podCountEqualsDesiredCount
+    - steps:
+        - type: wait
+          parameters:
+            duration: 10s
+        - type: attack
+          parameters:
+            duration: 60s
+          attackType: kubernetes-delete-pod-attack
+          radius:
+            targetType: kubernetes-deployment
+            percentage: 100
+            list:
+              - "{{k8sNamespaceName}}/{{k8sDeploymentName}}"

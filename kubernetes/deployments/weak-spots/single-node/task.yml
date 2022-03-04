@@ -1,0 +1,9 @@
+name: steadybit/definitions/kubernetes/deployments/weak-spots/single-node
+description: "Verifies whether the Kubernetes deployment is spread across two or more nodes."
+type: weak_spot
+weakSpotImpl:  k8s-single-node
+inputs:
+  - name: k8sClusterName
+  - name: k8sNamespaceName
+  - name: k8sDeploymentName
+  - name: containerName

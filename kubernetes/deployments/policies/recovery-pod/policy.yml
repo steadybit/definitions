@@ -1,0 +1,13 @@
+name: steadybit/definitions/kubernetes/deployments/policies/recovery-pod
+description: Challenges for recovery.
+type: policy
+tasks:
+  - name: steadybit/definitions/kubernetes/deployments/experiments/recovery-of-single-container
+    version: 0.2.0
+    forEach:
+      iterables:
+        - container
+      define:
+        containerName: '{{container.name}}'
+  - name: steadybit/definitions/kubernetes/deployments/experiments/recovery-of-single-host
+    version: 0.2.0

@@ -1,0 +1,9 @@
+name: steadybit/definitions/kubernetes/deployments/weak-spots/deployment-strategy
+description: "Verifies whether the Kubernetes deployment has a rolling update deployment strategy configured."
+type: weak_spot
+weakSpotImpl:  k8s-deployment-strategy
+inputs:
+  - name: k8sClusterName
+  - name: k8sNamespaceName
+  - name: k8sDeploymentName
+  - name: containerName
