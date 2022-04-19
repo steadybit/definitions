@@ -9,7 +9,7 @@ name: demo-gateway
 
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/weak-spots/single-replica"
-    version: 0.2.0
+    version: 0.3.0
     forEach:
       iterables: [ container ]
       define:
