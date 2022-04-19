@@ -1,0 +1,54 @@
+name: "steadybit/definitions/jvm/spring/experiments/downstream-http-client-errors"
+type: experiment
+description: "Simulated downstream HTTP client errors within a service. Useful to validate how a service behaves when a downstream HTTP service faces various issues."
+inputs:
+  - name: environmentName
+  - name: teamKey
+  - name: application
+  - name: httpEndpoint
+  - name: failureCauses
+  - name: httpMethods
+  - name: hostAddress
+  - name: urlPath
+    defaultValue: "*"
+experiment:
+  name: "{{application}} HTTP client errors in calls to {{hostAddress}}"
+  hypothesis: "{{application}} should be able to recover from partial outdates of {{hostAddress}}."
+  environment: "{{environmentName}}"
+  team: "{{teamKey}}"
+  lanes:
+    - steps:
+      - type: attack
+        attackType: "spring-httpclient-status-attack"
+        customLabel: "Introduce HTTP Request Errors"
+        radius:
+          targetType: "application"
+          list:
+          - "{{application}}"
+          percentage: 100
+        parameters:
+          duration: "60s"
+          failureCauses: "{{failureCauses}}"
+          httpStatus: "500"
+          httpMethods: "{{httpMethods}}"
+          erroneousCallRate: 20
+          hostAddress: "{{hostAddress}}"
+          urlPath: "{{urlPath}}"
+    - steps:
+      - type: action
+        actionType: "check:http"
+        customLabel: "Verify HTTP requests are successful"
+        parameters:
+          headers: []
+          method: "GET"
+          successRate: 99
+          maxConcurrent: 5
+          requestsPerSecond: 5
+          body: ""
+          url: "{{httpEndpoint}}"
+          duration: "60s"
+          followRedirects: false
+          readTimeout: "5s"
+          connectTimeout: "5s"
+          responsesContains: ""
+        
