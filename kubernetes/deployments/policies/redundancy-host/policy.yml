@@ -2,10 +2,11 @@ name: steadybit/definitions/kubernetes/deployments/policies/redundancy-host
 description: Challenges for host redundancy.
 type: policy
 tasks:
-  - name: steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-host
-    version: 0.2.0
+  - name: >-
+      steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-host
+    version: 0.3.0
   - name: steadybit/definitions/kubernetes/deployments/weak-spots/single-node
-    version: 0.2.0
+    version: 0.3.0
     forEach:
       iterables:
         - container
