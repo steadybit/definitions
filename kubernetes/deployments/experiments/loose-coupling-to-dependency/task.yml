@@ -85,5 +85,5 @@ experiment:
           customLabel: 'THEN: {{successRate}}% HTTP-Calls are successful'
           parameters:
             duration: 1m
-            successRate: "{{successRate}}"
+            successRate: {{successRate}}
             url: "{{httpEndpoint}}"
