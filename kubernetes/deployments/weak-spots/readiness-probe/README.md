@@ -9,7 +9,7 @@ name: demo-gateway
 
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/weak-spots/readiness-probe"
-    version: 0.3.0
+    version: 0.3.1
     forEach:
       iterables: [ container ]
       define:

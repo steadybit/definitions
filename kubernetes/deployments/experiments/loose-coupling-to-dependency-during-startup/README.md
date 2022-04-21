@@ -14,15 +14,15 @@ parameters:
   k8sDependencyNamespaceName: "steadybit-demo"
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.3.0
+    version: 0.3.1
     parameters:
       k8sDependencyDeploymentName: "fashion-bestseller"
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.3.0
+    version: 0.3.1
     parameters:
       k8sDependencyDeploymentName: "toys-bestseller"
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.3.0
+    version: 0.3.1
     parameters:
       k8sDependencyDeploymentName: "hot-deals"
 mapping:
