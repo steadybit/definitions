@@ -36,7 +36,7 @@ experiment:
           customLabel: 'THEN: HTTP invocation has success rate of >= {{successRate}}%'
           parameters:
             duration: 60s
-            successRate: {{successRate}}
+            successRate: "{{successRate}}"
             url: "{{httpEndpoint}}"
         - type: action
           actionType: check:http

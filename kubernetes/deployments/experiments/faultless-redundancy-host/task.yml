@@ -37,7 +37,7 @@ experiment:
           parameters:
             url: "{{httpEndpoint}}"
             duration: 60s
-            successRate: {{successRate}}
+            successRate: "{{successRate}}"
         - type: action
           actionType: check:http
           customLabel: 'THEN: All HTTP-Calls are successful again'
