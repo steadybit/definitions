@@ -4,7 +4,6 @@ Kubernetes deployment's pods serve successful HTTP responses when dependent serv
 Use this to verify that deployment's pods have a loose coupling to dependent services during runtime.
 
 ## Example Service Definition
-
 ```yaml
 name: demo-gateway
 parameters:
@@ -15,15 +14,15 @@ parameters:
   k8sDependencyNamespaceName: "steadybit-demo"
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.3.1
+    version: 0.3.0
     parameters:
       k8sDependencyDeploymentName: "fashion-bestseller"
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.3.1
+    version: 0.3.0
     parameters:
       k8sDependencyDeploymentName: "toys-bestseller"
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.3.1
+    version: 0.3.0
     parameters:
       k8sDependencyDeploymentName: "hot-deals"
 mapping:
