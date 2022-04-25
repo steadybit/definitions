@@ -1,4 +1,4 @@
-# kubernetes/deployments/redundancy-pod
+# kubernetes/deployments/policies/redundancy-pod
 
 Challenges for pod redundancy.
 

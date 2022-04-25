@@ -1,4 +1,4 @@
-# kubernetes/deployments/redundancy-host
+# kubernetes/deployments/policies/redundancy-host
 
 Challenges for host redundancy.
 

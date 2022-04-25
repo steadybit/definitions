@@ -1,4 +1,4 @@
-# kubernetes/deployments/loose-coupling
+# kubernetes/deployments/policies/loose-coupling
 
 Challenges for loose coupling.
 

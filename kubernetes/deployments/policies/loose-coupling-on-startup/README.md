@@ -1,4 +1,4 @@
-# kubernetes/deployments/loose-coupling-on-startup
+# kubernetes/deployments/policies/loose-coupling-on-startup
 
 Challenges for loose coupling on startup.
 

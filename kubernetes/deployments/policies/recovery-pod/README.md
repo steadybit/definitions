@@ -1,4 +1,4 @@
-# kubernetes/deployments/recovery-pod
+# kubernetes/deployments/policies/recovery-pod
 
 Challenges for recovery.
 

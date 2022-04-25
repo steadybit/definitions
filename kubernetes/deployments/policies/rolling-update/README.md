@@ -1,4 +1,4 @@
-# kubernetes/deployments/rolling-update
+# kubernetes/deployments/policies/rolling-update
 
 Challenges for redundancy during updates.
 
