@@ -3,9 +3,12 @@
 This repository contains all pre-defined resilience policies and tasks to be used in our service definitions.
 
 # Kubernetes
+
 ## Deployments
 
 ### Policies
+
+- [http-client-fault-tolerance](./kubernetes/deployments/policies/http-client-fault-tolerance/README.md)
 - [loose-coupling](./kubernetes/deployments/policies/loose-coupling/README.md)
 - [loose-coupling-on-startup](./kubernetes/deployments/policies/loose-coupling-on-startup/README.md)
 - [recovery-pod](./kubernetes/deployments/policies/recovery-pod/README.md)
@@ -14,6 +17,7 @@ This repository contains all pre-defined resilience policies and tasks to be use
 - [rolling-update](./kubernetes/deployments/policies/rolling-update/README.md)
 
 ### Experiments
+
 - [faultless-redundancy-container](./kubernetes/deployments/experiments/faultless-redundancy-container/README.md)
 - [faultless-redundancy-host](./kubernetes/deployments/experiments/faultless-redundancy-host/README.md)
 - [faultless-redundancy-rolling-update](./kubernetes/deployments/experiments/faultless-redundancy-rolling-update/README.md)
@@ -23,6 +27,7 @@ This repository contains all pre-defined resilience policies and tasks to be use
 - [recovery-of-single-host](./kubernetes/deployments/experiments/recovery-of-single-host/README.md)
 
 ### Weak Spots
+
 - [deployment-strategy](./kubernetes/deployments/weak-spots/deployment-strategy/README.md)
 - [readiness-probe](./kubernetes/deployments/weak-spots/readiness-probe/README.md)
 - [single-node](./kubernetes/deployments/weak-spots/single-node/README.md)
