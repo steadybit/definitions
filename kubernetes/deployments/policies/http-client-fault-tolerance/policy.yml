@@ -1,0 +1,15 @@
+name: steadybit/definitions/kubernetes/deployments/policies/http-client-fault-tolerance
+description: Challenges for HTTP Clients.
+type: policy
+tasks:
+  - name: >-
+      steadybit/definitions/jvm/spring/experiments/downstream-http-client-errors
+    version: 0.3.0
+    forEach:
+      iterables:
+        - outgoing_http_call
+      define:
+        hostAddress: '{{call.destination.host}}'
+        application: '{{call.source.application}}'
+        failureCauses: "[\"ERROR\",\"TIMEOUT\",\"HTTP_500\",\"HTTP_502\",\"HTTP_503\",\"HTTP_504\",\"HTTP_5XX\",\"HTTP_400\",\"HTTP_403\",\"HTTP_404\",\"HTTP_429\",\"HTTP_4XX\"]"
+        httpMethods: "[\"GET\",\"HEAD\",\"OPTIONS\",\"TRACE\",\"PUT\",\"DELETE\",\"PATCH\",\"POST\"]"
