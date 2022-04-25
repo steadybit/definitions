@@ -13,18 +13,10 @@ parameters:
   k8sDependencyClusterName: "demo-dev"
   k8sDependencyNamespaceName: "steadybit-demo"
 tasks:
-  - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
+  - name: "steadybit/definitions/kubernetes/deployments/experiments/loose-coupling-to-dependency-during-startup"
     version: 0.3.0
     parameters:
       k8sDependencyDeploymentName: "fashion-bestseller"
-  - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.3.0
-    parameters:
-      k8sDependencyDeploymentName: "toys-bestseller"
-  - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.3.0
-    parameters:
-      k8sDependencyDeploymentName: "hot-deals"
 mapping:
   kubernetes:
     cluster: demo-dev
