@@ -4,7 +4,7 @@ description: Challenges for HTTP Clients.
 type: policy
 tasks:
   - name: steadybit/definitions/jvm/spring/experiments/downstream-http-client-errors
-    version: main
+    version: 0.3.2
     forEach:
       iterables:
         - outgoing_http_call

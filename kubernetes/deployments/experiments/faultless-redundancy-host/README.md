@@ -2,7 +2,8 @@
 
 Kubernetes deployment serves successful HTTP responses when a host is shut down.
 Use this to verify that deployment's pods are spread across hosts.
-It is recommended to check first for the weak spots `k8s-single-node`, `k8s-readiness-probe`. This task requires an exposed HTTP endpoint and at least two pod replicas. A configurable HTTP call success rate is expected throughout.
+It is recommended to check first for the weak spots `k8s-single-node`, `k8s-readiness-probe`. This task requires an exposed HTTP endpoint and at least two pod
+replicas. A configurable HTTP call success rate is expected throughout.
 
 ## Example Service Definition
 
@@ -10,7 +11,7 @@ It is recommended to check first for the weak spots `k8s-single-node`, `k8s-read
 name: demo-gateway
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-host"
-    version: 0.3.1
+    version: 0.3.2
     parameters:
       teamKey: "BS"
       environmentName: "Online Shop DEV"

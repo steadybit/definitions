@@ -1,4 +1,4 @@
-# faultless-redundancy-rolling-update 
+# faultless-redundancy-rolling-update
 
 Kubernetes deployment serves successful HTTP responses while performing an update. Use this to verify a rolling update
 strategy is implemented and functional. It is recommended to check first for the weak spots `k8s-deployment-strategy`. This task requires an exposed HTTP
@@ -10,7 +10,7 @@ endpoint and at least two pod replicas. A configurable HTTP call success rate is
 name: demo-gateway
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.3.1
+    version: 0.3.2
     parameters:
       teamKey: "BS"
       environmentName: "Online Shop DEV"

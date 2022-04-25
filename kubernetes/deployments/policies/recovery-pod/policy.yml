@@ -4,7 +4,7 @@ type: policy
 tasks:
   - name: >-
       steadybit/definitions/kubernetes/deployments/experiments/recovery-of-single-container
-    version: 0.3.1
+    version: 0.3.2
     forEach:
       iterables:
         - container
@@ -12,4 +12,4 @@ tasks:
         containerName: '{{container.name}}'
   - name: >-
       steadybit/definitions/kubernetes/deployments/experiments/recovery-of-single-host
-    version: 0.3.1
+    version: 0.3.2
