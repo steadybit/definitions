@@ -4,21 +4,21 @@ type: policy
 tasks:
   - name: >-
       steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-container
-    version: 0.3.2
+    version: 0.3.3
     forEach:
       iterables:
         - container
       define:
         containerName: '{{container.name}}'
   - name: steadybit/definitions/kubernetes/deployments/weak-spots/readiness-probe
-    version: 0.3.2
+    version: 0.3.3
     forEach:
       iterables:
         - container
       define:
         containerName: '{{container.name}}'
   - name: steadybit/definitions/kubernetes/deployments/weak-spots/single-replica
-    version: 0.3.2
+    version: 0.3.3
     forEach:
       iterables:
         - container

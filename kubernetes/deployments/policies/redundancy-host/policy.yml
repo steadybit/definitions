@@ -4,9 +4,9 @@ type: policy
 tasks:
   - name: >-
       steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-host
-    version: 0.3.2
+    version: 0.3.3
   - name: steadybit/definitions/kubernetes/deployments/weak-spots/single-node
-    version: 0.3.2
+    version: 0.3.3
     forEach:
       iterables:
         - container

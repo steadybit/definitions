@@ -13,7 +13,7 @@ id: ca086ce3-15af-4b5a-9fda-456d03ad82c0
 name: demo-gateway
 policies:
   - name: 'steadybit/definitions/kubernetes/deployments/policies/loose-coupling'
-    version: 0.3.2
+    version: 0.3.3
     parameters:
       teamKey: 'BS'
       environmentName: 'Online Shop DEV'

@@ -9,7 +9,7 @@ name: demo-gateway
 
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/weak-spots/deployment-strategy"
-    version: 0.3.2
+    version: 0.3.3
     forEach:
       iterables: [ container ]
       define:
