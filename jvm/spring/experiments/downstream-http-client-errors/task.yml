@@ -16,7 +16,7 @@ inputs:
     defaultValue: "*"
 experiment:
   name: "{{application}} HTTP client errors in calls to {{hostAddress}}"
-  hypothesis: "{{application}} should be able to recover from partial outdates of {{hostAddress}}."
+  hypothesis: "{{application}} should be able to recover from partial outages of {{hostAddress}}."
   environment: "{{environmentName}}"
   team: "{{teamKey}}"
   lanes:
