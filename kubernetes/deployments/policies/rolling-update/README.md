@@ -7,7 +7,7 @@ Challenges for redundancy during updates.
 - steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update
 - steadybit/definitions/kubernetes/deployments/weak-spots/deployment-strategy
 
-- == Example Service Definition
+## Example Service Definition
 
 ````yaml
 id: ca086ce3-15af-4b5a-9fda-456d03ad82c0
