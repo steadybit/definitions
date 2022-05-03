@@ -60,10 +60,9 @@ experiment:
           parameters:
             duration: 10s
         - type: attack
-          customLabel: 'WHEN: All pods are stopped after each other'
-          parameters:
-            duration: 60s
-          attackType: kubernetes-delete-pod-attack
+          customLabel: 'WHEN: A rollout restart is executed'
+          parameters: {}
+          attackType: kubernetes-rollout-restart-attack
           radius:
             targetType: kubernetes-deployment
             percentage: 100
