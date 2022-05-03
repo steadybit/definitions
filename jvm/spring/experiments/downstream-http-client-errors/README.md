@@ -7,7 +7,7 @@ Simulated downstream HTTP client errors within a service. Useful to validate how
 ```yaml
 tasks:
   - name: 'steadybit/definitions/jvm/spring/experiments/downstream-http-client-errors'
-    version: 0.3.3
+    version: 0.4.0
     parameters:
       teamKey: 'BS'
       environmentName: 'Online Shop PROD'
