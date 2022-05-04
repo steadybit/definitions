@@ -4,7 +4,7 @@ type: policy
 tasks:
   - name: >-
       steadybit/definitions/kubernetes/deployments/experiments/loose-coupling-to-dependency
-    version: 0.4.0
+    version: 0.5.0
     forEach:
       iterables:
         - dependency

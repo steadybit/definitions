@@ -10,7 +10,7 @@ endpoint and at least two pod replicas. A configurable HTTP call success rate is
 name: demo-gateway
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.4.0
+    version: 0.5.0
     parameters:
       teamKey: "BS"
       environmentName: "Online Shop DEV"
