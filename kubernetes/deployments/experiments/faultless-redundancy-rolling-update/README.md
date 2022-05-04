@@ -24,12 +24,13 @@ mapping:
 
 ## Parameters
 
-| Name                | Type   | Required | Default        | Description                                      |
-|---------------------|--------|----------|----------------|--------------------------------------------------|
-| `environmentName`   | string | yes      |                | The environment which is used for the experiment |
-| `teamKey`           | string | yes      |                | The team which is used for the experiment        |
-| `k8sClusterName`    | string | no       | (from mapping) | The Kubernetes cluster of the deployment         |
-| `k8sNamespaceName`  | string | no       | (from mapping) | The Kubernetes namespace of the deployment       |
-| `k8sDeploymentName` | string | no       | (from mapping) | The Kubernetes deployment to roll over.          |
-| `httpEndpoint`      | url    | yes      |                | The HTTP endpoint to check using GET requests    |
-| `successRate`       | number | no       | 95             | The minimum required success rate.               |
+| Name                      | Type   | Required | Default        | Description                                                |
+|---------------------------|--------|----------|----------------|------------------------------------------------------------|
+| `environmentName`         | string | yes      |                | The environment which is used for the experiment           |
+| `teamKey`                 | string | yes      |                | The team which is used for the experiment                  |
+| `k8sClusterName`          | string | no       | (from mapping) | The Kubernetes cluster of the deployment                   |
+| `k8sNamespaceName`        | string | no       | (from mapping) | The Kubernetes namespace of the deployment                 |
+| `k8sDeploymentName`       | string | no       | (from mapping) | The Kubernetes deployment to roll over.                    |
+| `httpEndpoint`            | url    | yes      |                | The HTTP endpoint to check using GET requests              |
+| `successRate`             | number | no       | 95             | The minimum required success rate.                         |
+| `expectedRolloutDuration` | string | no       | 3m             | For how long the configured success rate will be verified. |

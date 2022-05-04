@@ -17,6 +17,8 @@ inputs:
   - name: successRate
     type: number
     defaultValue: 95
+  - name: expectedRolloutDuration
+    defaultValue: "3m"
 experiment:
   name: "{{k8sNamespaceName}}/{{k8sDeploymentName}} faultless redundancy during rolling update"
   hypothesis: "When a deployment is rescheduled {{successRate}}% of all requests to {{httpEndpoint}} are successful"
@@ -35,7 +37,7 @@ experiment:
           actionType: check:http
           customLabel: 'THEN: HTTP invocation has success rate of >= {{successRate}}%'
           parameters:
-            duration: 60s
+            duration: "{{expectedRolloutDuration}}"
             successRate: "{{successRate}}"
             url: "{{httpEndpoint}}"
         - type: action
