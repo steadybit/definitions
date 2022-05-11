@@ -63,10 +63,10 @@ experiment:
             duration: 10s
         - type: attack
           customLabel: 'WHEN: A rollout restart is executed'
-          parameters: {}
+          parameters: { }
           attackType: kubernetes-rollout-restart-attack
           radius:
             targetType: kubernetes-deployment
             percentage: 100
             list:
-              - "{{k8sNamespaceName}}/{{k8sDeploymentName}}"
+              - "{{k8sClusterName}}/{{k8sNamespaceName}}/{{k8sDeploymentName}}"
