@@ -57,14 +57,11 @@ experiment:
                   values:
                     - "{{containerName}}"
     - steps:
-        - type: wait
-          parameters:
-            duration: 10s
         - type: action
           actionType: check:kubernetes-pod-count
           customLabel: 'THEN: Ready Pod Count decreases'
           parameters:
-            duration: 10s
+            duration: 20s
             cluster: "{{k8sClusterName}}"
             namespace: "{{k8sNamespaceName}}"
             deployment: "{{k8sDeploymentName}}"
