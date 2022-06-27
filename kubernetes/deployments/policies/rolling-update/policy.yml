@@ -1,5 +1,5 @@
 name: steadybit/definitions/kubernetes/deployments/policies/rolling-update
-description: Challenges for redundancy during updates.
+description: Redundancy is essential when you roll out new versions of your service. Simulate the rollout and check for side effects.
 type: policy
 tasks:
   - name: >-

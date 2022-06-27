@@ -1,6 +1,6 @@
 name: >-
   steadybit/definitions/kubernetes/deployments/policies/loose-coupling-on-startup
-description: Challenges for loose coupling on startup.
+description: Nobody wants to ensure that services are started in a specific order. Verify that no startup coupling between services would enforce a specific startup order.
 type: policy
 tasks:
   - name: >-
