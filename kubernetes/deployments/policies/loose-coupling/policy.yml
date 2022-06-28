@@ -1,5 +1,5 @@
 name: steadybit/definitions/kubernetes/deployments/policies/loose-coupling
-description: Challenges for loose coupling.
+description: Loose coupling to dependent services while processing requests is a dream come true. Check that your services can still respond successfully when dependencies are unavailable.
 type: policy
 tasks:
   - name: >-

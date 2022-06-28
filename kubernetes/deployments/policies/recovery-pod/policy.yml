@@ -1,5 +1,5 @@
 name: steadybit/definitions/kubernetes/deployments/policies/recovery-pod
-description: Challenges for recovery.
+description: A service needs to be able to recover in case of problems. At a bare minimum, restarts need to be supported.
 type: policy
 tasks:
   - name: >-

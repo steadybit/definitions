@@ -1,6 +1,6 @@
 name: >-
   steadybit/definitions/kubernetes/deployments/policies/http-client-fault-tolerance
-description: Challenges for HTTP Clients.
+description: Validate how your service behaves when a downstream HTTP service faces issues.
 type: policy
 tasks:
   - name: steadybit/definitions/jvm/spring/experiments/downstream-http-client-errors

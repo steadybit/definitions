@@ -1,5 +1,5 @@
 name: steadybit/definitions/kubernetes/deployments/policies/redundancy-pod
-description: Challenges for redundancy.
+description: A single point of failure is hard to make resilient. Verify that your service is configured correctly for pod redundancy.
 type: policy
 tasks:
   - name: >-
