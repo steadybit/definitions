@@ -1,13 +1,15 @@
 name: steadybit/definitions/kubernetes/deployments/policies/rolling-update
-description: Redundancy is essential when you roll out new versions of your service. Simulate the rollout and check for side effects.
+description: >-
+  Redundancy is essential when you roll out new versions of your service.
+  Simulate the rollout and check for side effects.
 type: policy
 tasks:
   - name: >-
       steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update
-    version: 0.5.2
+    version: 0.5.3
   - name: >-
       steadybit/definitions/kubernetes/deployments/weak-spots/deployment-strategy
-    version: 0.5.2
+    version: 0.5.3
     forEach:
       iterables:
         - container

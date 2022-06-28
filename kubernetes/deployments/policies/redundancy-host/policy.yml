@@ -1,12 +1,14 @@
 name: steadybit/definitions/kubernetes/deployments/policies/redundancy-host
-description: A single point of failure is hard to make resilient. Verify that your service is well distributed in your cluster across multiple hosts.
+description: >-
+  A single point of failure is hard to make resilient. Verify that your service
+  is well distributed in your cluster across multiple hosts.
 type: policy
 tasks:
   - name: >-
       steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-host
-    version: 0.5.2
+    version: 0.5.3
   - name: steadybit/definitions/kubernetes/deployments/weak-spots/single-node
-    version: 0.5.2
+    version: 0.5.3
     forEach:
       iterables:
         - container

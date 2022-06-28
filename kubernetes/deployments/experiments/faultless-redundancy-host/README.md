@@ -11,7 +11,7 @@ replicas. A configurable HTTP call success rate is expected throughout.
 name: demo-gateway
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-host"
-    version: 0.5.2
+    version: 0.5.3
     parameters:
       teamKey: "BS"
       environmentName: "Online Shop DEV"
