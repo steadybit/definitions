@@ -1,6 +1,6 @@
 # downstream-http-client-errors
 
-Simulated downstream HTTP client errors within a service. Useful to validate how a service behaves when a downstream HTTP service faces various issues.
+Validate how your service behaves when a downstream HTTP service faces various issues. This will simulate downstream HTTP client errors within your service.
 
 ## Example Service Definition
 

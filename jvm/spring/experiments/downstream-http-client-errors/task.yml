@@ -1,6 +1,6 @@
 name: "steadybit/definitions/jvm/spring/experiments/downstream-http-client-errors"
 type: experiment
-description: "Simulated downstream HTTP client errors within a service. Useful to validate how a service behaves when a downstream HTTP service faces various issues."
+description: "Validate how your service behaves when a downstream HTTP service faces various issues. This will simulate downstream HTTP client errors within your service."
 inputs:
   - name: environmentName
   - name: teamKey

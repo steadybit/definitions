@@ -1,7 +1,7 @@
 # recovery-of-single-host
 
-Kubernetes deployment recovers when a host is shut down.
-Use this to verify that deployments are host independent.
+Verify that your deployment recovers when a host is shut down.
+You can also verify that your deployments are host independent.
 The affected deployments' pods should be replaced within ten minutes – ending with the Kubernetes deployment back in the ready state.
 
 ## Example Service Definition

@@ -1,8 +1,8 @@
 name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
 type: experiment
 description: >
-  Verify whether your deployment serves successful HTTP responses while performing an update. Have you configured a rolling update strategy that is functional?
-  This task requires an exposed HTTP endpoint and at least two pod replicas. It also checks the configured deployment strategy (weak spot `k8s-deployment-strategy`).
+  Verify whether your deployment serves successful HTTP responses while performing an update. So, is your configured rolling update strategy functional?
+  This task requires an exposed HTTP endpoint and at least two pod replicas.
 inputs:
   - name: environmentName
   - name: teamKey

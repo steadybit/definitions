@@ -1,8 +1,7 @@
 # faultless-redundancy-rolling-update
 
-Kubernetes deployment serves successful HTTP responses while performing an update. Use this to verify a rolling update
-strategy is implemented and functional. It is recommended to check first for the weak spots `k8s-deployment-strategy`. This task requires an exposed HTTP
-endpoint and at least two pod replicas. A configurable HTTP call success rate is expected throughout.
+Verify whether your deployment serves successful HTTP responses while performing an update. So, is your configured rolling update strategy functional?
+This task requires an exposed HTTP endpoint and at least two pod replicas.
 
 ## Example Service Definition
 

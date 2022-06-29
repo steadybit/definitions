@@ -1,7 +1,6 @@
 # recovery-of-single-container
 
-The Kubernetes deployment recovers when a container is killed.
-Use this to verify that restarts are possible.
+Verify that your container restarts successfully and your deployment recovers automatically.
 The affected pod should be replaced within a given time – ending with the Kubernetes deployment back in the ready state.
 
 ## Example Service Definition
