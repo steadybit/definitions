@@ -1,6 +1,6 @@
 # kubernetes/deployments/policies/redundancy-pod
 
-Challenges for pod redundancy.
+A single point of failure is hard to make resilient. Verify that your service is correctly configured to be redundant on pod-level.
 
 ## Used Tasks
 

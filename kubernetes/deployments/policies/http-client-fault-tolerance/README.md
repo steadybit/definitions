@@ -1,6 +1,6 @@
 # kubernetes/deployments/policies/http-client-fault-tolerance
 
-Challenges for HTTP Clients.
+Validate how your service behaves when a downstream HTTP service faces issues.
 
 ## Used Tasks
 

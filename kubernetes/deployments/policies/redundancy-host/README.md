@@ -1,11 +1,12 @@
 # kubernetes/deployments/policies/redundancy-host
 
-Challenges for host redundancy.
+Ensure that your service is properly redundant on host level to avoid a single point of failure of the infrastructure.
 
 ## Used Tasks
 
 - steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-host
 - steadybit/definitions/kubernetes/deployments/weak-spots/single-node
+- steadybit/definitions/kubernetes/deployments/weak-spots/readiness-probe
 
 ## Example Service Definition
 

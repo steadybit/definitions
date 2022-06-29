@@ -1,6 +1,6 @@
 # kubernetes/deployments/policies/loose-coupling
 
-Challenges for loose coupling.
+Loose coupling to dependent services while processing requests is a dream come true. Check that your services can still respond successfully when dependencies are unavailable.
 
 ## Used Tasks
 
