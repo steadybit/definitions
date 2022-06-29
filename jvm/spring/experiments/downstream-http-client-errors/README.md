@@ -7,7 +7,7 @@ Validate how your service behaves when a downstream HTTP service faces various i
 ```yaml
 tasks:
   - name: 'steadybit/definitions/jvm/spring/experiments/downstream-http-client-errors'
-    version: 0.5.4
+    version: 0.5.2
     parameters:
       teamKey: 'BS'
       environmentName: 'Online Shop PROD'

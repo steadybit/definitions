@@ -15,7 +15,7 @@ parameters:
   k8sDependencyNamespaceName: "steadybit-demo"
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/loose-coupling-to-dependency"
-    version: 0.5.4
+    version: 0.5.2
     parameters:
       k8sDependencyDeploymentName: "fashion-bestseller"
 mapping:

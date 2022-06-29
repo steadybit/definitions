@@ -6,7 +6,7 @@ type: policy
 tasks:
   - name: >-
       steadybit/definitions/kubernetes/deployments/experiments/loose-coupling-to-dependency-during-startup
-    version: 0.5.4
+    version: 0.5.2
     forEach:
       iterables:
         - dependency
