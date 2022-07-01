@@ -1,6 +1,6 @@
 # kubernetes/deployments/policies/loose-coupling-on-startup
 
-Challenges for loose coupling on startup.
+Nobody wants to ensure that services are started in a specific order. Verify that no startup coupling to dependent services would enforce a specific startup order.
 
 ## Used Tasks
 

@@ -2,7 +2,7 @@ name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redund
 type: experiment
 description: >
   Check whether your redundancy to serve a HTTP endpoint works while a single container becomes temporarily unavailable.
-  This task requires an exposed HTTP endpoint and at least two pod replicas, check the weak spots `k8s-single-replica`, `k8s-readiness-probe`.
+  This task requires an exposed HTTP endpoint and at least two pod replicas.
 inputs:
   - name: environmentName
   - name: teamKey

@@ -1,9 +1,7 @@
 name: >-
   steadybit/definitions/kubernetes/deployments/policies/loose-coupling-on-startup
-description: >-
-  Nobody wants to ensure that services are started in a specific order. Verify
-  that no startup coupling between services would enforce a specific startup
-  order.
+description: Nobody wants to ensure that services are started in a specific order. Verify that no startup coupling to dependent services would enforce a specific startup order.
+shortDescription: Check for coupling to dependent services when restarting your service.
 type: policy
 tasks:
   - name: >-

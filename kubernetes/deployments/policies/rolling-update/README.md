@@ -1,6 +1,6 @@
 # kubernetes/deployments/policies/rolling-update
 
-Challenges for redundancy during updates.
+Redundancy is essential when you roll out new versions of your service. This is why you need a rolling update strategy and you should simulate the rollout to check for side effects.
 
 ## Used Tasks
 

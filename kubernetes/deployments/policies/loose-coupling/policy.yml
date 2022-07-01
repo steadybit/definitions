@@ -1,8 +1,6 @@
 name: steadybit/definitions/kubernetes/deployments/policies/loose-coupling
-description: >-
-  Loose coupling to dependent services while processing requests is a dream come
-  true. Check that your services can still respond successfully when
-  dependencies are unavailable.
+description: Loose coupling to dependent services while processing requests is a dream come true. Check that your services can still respond successfully when dependencies are unavailable.
+shortDescription: Test that your service functions when dependencies are unavailable.
 type: policy
 tasks:
   - name: >-

@@ -1,6 +1,6 @@
 # kubernetes/deployments/policies/recovery-pod
 
-Challenges for recovery.
+A service needs to be able to recover in case of problems. At a bare minimum, it needs to support restarts when the container or underlying host has an outage.
 
 ## Used Tasks
 

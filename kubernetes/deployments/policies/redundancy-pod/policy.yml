@@ -1,7 +1,6 @@
 name: steadybit/definitions/kubernetes/deployments/policies/redundancy-pod
-description: >-
-  A single point of failure is hard to make resilient. Verify that your service
-  is configured correctly for pod redundancy.
+description: A single point of failure is hard to make resilient. Verify that your service is properly redundant on pod-level.
+shortDescription: Verify to be redundant on pod-level to avoid single point of failure.
 type: policy
 tasks:
   - name: >-
