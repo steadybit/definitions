@@ -9,7 +9,7 @@ This task requires an exposed HTTP endpoint and at least two pod replicas.
 name: demo-gateway
 tasks:
   - name: "steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update"
-    version: 0.5.3
+    version: 0.5.4
     parameters:
       teamKey: "BS"
       environmentName: "Online Shop DEV"

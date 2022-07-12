@@ -1,14 +1,16 @@
 name: steadybit/definitions/kubernetes/deployments/policies/rolling-update
-description: Deploying new versions without service degradation is essential. Simulate a rolling rollout and check for side effects.
+description: >-
+  Deploying new versions without service degradation is essential. Simulate a
+  rolling rollout and check for side effects.
 shortDescription: Ensure rolling rollout without service degradation.
 type: policy
 tasks:
   - name: >-
       steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update
-    version: 0.5.3
+    version: 0.5.4
   - name: >-
       steadybit/definitions/kubernetes/deployments/weak-spots/deployment-strategy
-    version: 0.5.3
+    version: 0.5.4
     forEach:
       iterables:
         - container

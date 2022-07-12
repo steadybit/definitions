@@ -5,7 +5,7 @@ shortDescription: Test your service when a downstream HTTP service has issues.
 type: policy
 tasks:
   - name: steadybit/definitions/jvm/spring/experiments/downstream-http-client-errors
-    version: 0.5.3
+    version: 0.5.4
     forEach:
       iterables:
         - outgoing_http_call

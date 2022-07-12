@@ -1,20 +1,22 @@
 name: steadybit/definitions/kubernetes/deployments/policies/redundancy-host
-description: Ensure that your service is properly redundant on host level to avoid a single point of failure of the infrastructure.
+description: >-
+  Ensure that your service is properly redundant on host level to avoid a single
+  point of failure of the infrastructure.
 shortDescription: Ensure redundancy on host-level to avoid single point of failure.
 type: policy
 tasks:
   - name: >-
       steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-host
-    version: 0.5.3
+    version: 0.5.4
   - name: steadybit/definitions/kubernetes/deployments/weak-spots/single-node
-    version: 0.5.3
+    version: 0.5.4
     forEach:
       iterables:
         - container
       define:
         containerName: '{{container.name}}'
   - name: steadybit/definitions/kubernetes/deployments/weak-spots/readiness-probe
-    version: 0.5.3
+    version: 0.5.4
     forEach:
       iterables:
         - container

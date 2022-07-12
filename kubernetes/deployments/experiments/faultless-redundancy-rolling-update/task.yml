@@ -65,5 +65,18 @@ experiment:
           radius:
             targetType: kubernetes-deployment
             percentage: 100
-            list:
-              - "{{k8sClusterName}}/{{k8sNamespaceName}}/{{k8sDeploymentName}}"
+            query:
+              operator: AND
+              predicates:
+                - key: k8s.cluster-name
+                  operator: EQUALS
+                  values:
+                    - "{{k8sClusterName}}"
+                - key: k8s.namespace
+                  operator: EQUALS
+                  values:
+                    - "{{k8sNamespaceName}}"
+                - key: k8s.deployment
+                  operator: EQUALS
+                  values:
+                    - "{{k8sDeploymentName}}"
