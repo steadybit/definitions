@@ -2,7 +2,7 @@
 
 Verifies whether the Kubernetes deployment is spread across two or more nodes.
 
-## Example Service Definition
+## Example Policy Binding
 
 ```yaml
 name: demo-gateway

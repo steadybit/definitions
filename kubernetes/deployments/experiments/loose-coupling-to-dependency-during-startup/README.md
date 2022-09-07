@@ -3,7 +3,7 @@
 Kubernetes deployment's pods can become ready when dependent services are unreachable.
 Use this verify that deployment's pods have a loose coupling to dependent services during startup.
 
-## Example Service Definition
+## Example Policy Binding
 
 ```yaml
 name: demo-gateway

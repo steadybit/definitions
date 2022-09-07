@@ -6,7 +6,7 @@ Nobody wants to ensure that services are started in a specific order. Verify tha
 
 - steadybit/definitions/kubernetes/deployments/experiments/loose-coupling-to-dependency-during-startup
 
-## Example Service Definition
+## Example Policy Binding
 
 ````yaml
 id: ca086ce3-15af-4b5a-9fda-456d03ad82c0

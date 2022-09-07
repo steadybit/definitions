@@ -2,7 +2,7 @@
 
 Validate how your service behaves when a downstream HTTP service faces various issues. This will simulate downstream HTTP client errors within your service.
 
-## Example Service Definition
+## Example Policy Binding
 
 ```yaml
 tasks:

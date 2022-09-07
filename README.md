@@ -1,6 +1,6 @@
 # Steadybit Resilience Policies and Task Definitions
 
-This repository contains all pre-defined resilience policies to be used in our service definitions.<br/>
+This repository contains all pre-defined resilience policies to be used in our policy bindings.<br/>
 A policy includes tasks which are experiments and weak spots:
 - An **experiment** ![Icon Experiment](assets/icon-experiment.svg) needs to be executed to influence the behavior of your environment and check the environment's reaction to it.
 - A **weak spot** ![Icon Weakspot](assets/icon-weakspot.svg) is a check constantly performed by Steadybit without any influence on your environment.

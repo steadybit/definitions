@@ -3,7 +3,7 @@
 Verify that your container restarts successfully and your deployment recovers automatically.
 The affected pod should be replaced within a given time – ending with the Kubernetes deployment back in the ready state.
 
-## Example Service Definition
+## Example Policy Binding
 
 ```yaml
 name: demo-gateway

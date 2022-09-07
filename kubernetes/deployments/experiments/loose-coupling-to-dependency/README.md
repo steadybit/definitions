@@ -3,7 +3,7 @@
 Kubernetes deployment's pods serve successful HTTP responses when dependent services are unreachable.
 Use this to verify that deployment's pods have a loose coupling to dependent services during runtime.
 
-## Example Service Definition
+## Example Policy Binding
 
 ```yaml
 name: demo-gateway

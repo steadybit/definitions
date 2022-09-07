@@ -2,7 +2,7 @@
 
 Verifies whether the Kubernetes deployment has a rolling update deployment strategy configured.
 
-## Example Service Definition
+## Example Policy Binding
 
 ```yaml
 name: demo-gateway

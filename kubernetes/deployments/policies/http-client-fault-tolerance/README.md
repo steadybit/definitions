@@ -6,7 +6,7 @@ Validate how your service behaves when a downstream HTTP service faces issues.
 
 - steadybit/definitions/jvm/spring/experiments/downstream-http-client-errors
 
-## Example Service Definition
+## Example Policy Binding
 
 ````yaml
 id: ca086ce3-15af-4b5a-9fda-456d03ad82c0

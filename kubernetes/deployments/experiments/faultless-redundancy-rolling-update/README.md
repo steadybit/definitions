@@ -3,7 +3,7 @@
 Verify whether your deployment serves successful HTTP responses while performing an update. So, is your configured rolling update strategy functional?
 This task requires an exposed HTTP endpoint and at least two pod replicas.
 
-## Example Service Definition
+## Example Policy Binding
 
 ```yaml
 name: demo-gateway

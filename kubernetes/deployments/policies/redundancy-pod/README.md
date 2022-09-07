@@ -8,7 +8,7 @@ A single point of failure is hard to make resilient. Verify that your service is
 - steadybit/definitions/kubernetes/deployments/weak-spots/readiness-probe
 - steadybit/definitions/kubernetes/deployments/weak-spots/single-replica
 
-## Example Service Definition
+## Example Policy Binding
 
 ````yaml
 id: ca086ce3-15af-4b5a-9fda-456d03ad82c0

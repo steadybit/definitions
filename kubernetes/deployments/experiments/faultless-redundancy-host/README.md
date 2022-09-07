@@ -3,7 +3,7 @@
 Check whether your redundancy to serve a HTTP endpoint works while a host is shutting down and your deployment's pods are spread across hosts.
 This task requires an exposed HTTP endpoint and at least two pod replicas.
 
-## Example Service Definition
+## Example Policy Binding
 
 ```yaml
 name: demo-gateway

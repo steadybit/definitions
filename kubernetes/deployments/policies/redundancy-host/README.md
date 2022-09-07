@@ -8,7 +8,7 @@ Ensure that your service is properly redundant on host level to avoid a single p
 - steadybit/definitions/kubernetes/deployments/weak-spots/single-node
 - steadybit/definitions/kubernetes/deployments/weak-spots/readiness-probe
 
-## Example Service Definition
+## Example Policy Binding
 
 ````yaml
 id: ca086ce3-15af-4b5a-9fda-456d03ad82c0

@@ -3,7 +3,7 @@
 Check whether your redundancy to serve a HTTP endpoint works while a single container becomes temporarily unavailable.
 This task requires an exposed HTTP endpoint and at least two pod replicas.
 
-## Example Service Definition
+## Example Policy Binding
 
 ```yaml
 name: demo-gateway

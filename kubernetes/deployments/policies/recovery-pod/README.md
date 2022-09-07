@@ -7,7 +7,7 @@ A service needs to be able to recover in case of problems. At a bare minimum, it
 - steadybit/definitions/kubernetes/deployments/experiments/recovery-of-single-container
 - steadybit/definitions/kubernetes/deployments/experiments/recovery-of-single-host
 
-## Example Service Definition
+## Example Policy Binding
 
 ````yaml
 id: ca086ce3-15af-4b5a-9fda-456d03ad82c0

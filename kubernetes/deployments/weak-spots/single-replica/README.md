@@ -2,7 +2,7 @@
 
 Verifies whether the Kubernetes deployment has multiple replicas.
 
-## Example Service Definition
+## Example Policy Binding
 
 ```yaml
 name: demo-gateway

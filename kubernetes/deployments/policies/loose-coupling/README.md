@@ -6,7 +6,7 @@ Loose coupling to dependent services while processing requests is a dream come t
 
 - steadybit/definitions/kubernetes/deployments/experiments/loose-coupling-to-dependency
 
-## Example Service Definition
+## Example Policy Binding
 
 ````yaml
 id: ca086ce3-15af-4b5a-9fda-456d03ad82c0
