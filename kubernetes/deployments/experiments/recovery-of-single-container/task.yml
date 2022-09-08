@@ -28,11 +28,11 @@ experiment:
             namespace: "{{k8sNamespaceName}}"
             deployment: "{{k8sDeploymentName}}"
             podcount: podCountEqualsDesiredCount
-        - type: attack
+        - type: action
           customLabel: "WHEN: Container {{containerName}} is stopped"
           parameters:
             graceful: 'true'
-          attackType: container-stop-attack
+          actionType: container-stop-attack
           radius:
             targetType: container
             maximum: 1

@@ -28,11 +28,11 @@ experiment:
             namespace: "{{k8sNamespaceName}}"
             deployment: "{{k8sDeploymentName}}"
             podcount: podCountEqualsDesiredCount
-        - type: attack
+        - type: action
           customLabel: "WHEN: 100% of the {{k8sDependencyDeploymentName}} are blackholed"
           parameters:
             duration: 3m
-          attackType: container-network-blackhole-attack
+          actionType: container-network-blackhole-attack
           radius:
             targetType: container
             percentage: 100
@@ -55,8 +55,8 @@ experiment:
         - type: wait
           parameters:
             duration: 20s
-        - type: attack
-          attackType: container-stop-attack
+        - type: action
+          actionType: container-stop-attack
           parameters:
             graceful: 'true'
           radius:

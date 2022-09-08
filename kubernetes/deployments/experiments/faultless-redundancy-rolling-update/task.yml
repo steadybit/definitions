@@ -58,10 +58,10 @@ experiment:
         - type: wait
           parameters:
             duration: 10s
-        - type: attack
+        - type: action
           customLabel: 'WHEN: A rollout restart is executed'
           parameters: { }
-          attackType: kubernetes-rollout-restart-attack
+          actionType: kubernetes-rollout-restart-attack
           radius:
             targetType: kubernetes-deployment
             percentage: 100

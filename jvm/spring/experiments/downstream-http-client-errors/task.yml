@@ -21,8 +21,8 @@ experiment:
   team: "{{teamKey}}"
   lanes:
     - steps:
-        - type: attack
-          attackType: "spring-httpclient-status-attack"
+        - type: action
+          actionType: "spring-httpclient-status-attack"
           customLabel: "Introduce HTTP Request Errors"
           radius:
             targetType: "application"

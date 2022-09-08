@@ -28,12 +28,12 @@ experiment:
             namespace: "{{k8sNamespaceName}}"
             deployment: "{{k8sDeploymentName}}"
             podcount: podCountEqualsDesiredCount
-        - type: attack
+        - type: action
           customLabel: 'WHEN: A host is rebooted'
           parameters:
             reboot: 'true'
             delay: 0m
-          attackType: host-shutdown-attack
+          actionType: host-shutdown-attack
           radius:
             targetType: host
             maximum: 1
