@@ -65,7 +65,7 @@ experiment:
           radius:
             targetType: kubernetes-deployment
             percentage: 100
-            query:
+            predicate:
               operator: AND
               predicates:
                 - key: k8s.cluster-name

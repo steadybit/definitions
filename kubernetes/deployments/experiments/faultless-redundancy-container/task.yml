@@ -55,7 +55,7 @@ experiment:
           radius:
             targetType: container
             maximum: 1
-            query:
+            predicate:
               operator: AND
               predicates:
                 - key: k8s.cluster-name

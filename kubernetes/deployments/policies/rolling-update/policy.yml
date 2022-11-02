@@ -7,10 +7,10 @@ type: policy
 tasks:
   - name: >-
       steadybit/definitions/kubernetes/deployments/experiments/faultless-redundancy-rolling-update
-    version: 0.5.4
+    version: 0.5.6
   - name: >-
       steadybit/definitions/kubernetes/deployments/weak-spots/deployment-strategy
-    version: 0.5.4
+    version: 0.5.6
     forEach:
       iterables:
         - container

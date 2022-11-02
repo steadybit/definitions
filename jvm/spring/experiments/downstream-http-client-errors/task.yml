@@ -26,7 +26,7 @@ experiment:
           customLabel: "Introduce HTTP Request Errors"
           radius:
             targetType: "application"
-            query:
+            predicate:
               operator: AND
               predicates:
                 - key: application.name
