@@ -1,3 +1,6 @@
+# !GitHub repository is archived!
+Steadybit policy features are discontinued and not further supported.
+
 # Steadybit Resilience Policies and Task Definitions
 
 This repository contains all pre-defined resilience policies to be used in our policy bindings.<br/>
